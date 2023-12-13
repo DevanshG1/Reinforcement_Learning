@@ -1,0 +1,1 @@
+{"critic_loss": 1.5779716968536377, "actor_loss": 0.7080811262130737, "reward_loss": 2.356985330581665, "_timestamp": 1702395288.1071336, "_runtime": 222.4516725540161, "_step": 406, "mean_episode_rewards": -6007.3037479714885, "_wandb": {"runtime": 221}}

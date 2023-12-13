@@ -1,0 +1,180 @@
+wandb_version: 1
+
+train:
+  desc: null
+  value: '{''max_episodes'': 100000, ''before_train_episode'': 200, ''per_episode_length'':
+    25, ''reward_scale'': 1.0, ''single_step_mode'': False, ''gamma'': 0.95, ''TD'':
+    1, ''batch_norm'': False, ''tau'': 0.01, ''hard_action_interval'': 0.3, ''epsilon'':
+    0.2, ''joint_store'': True, ''buffer_select_with_batch_size'': True, ''batch_size'':
+    4096, ''mini_batch_size'': 1024, ''buffer_clear_rate'': 0.4, ''buffer_select_rate'':
+    0.5, ''lr_decay_interval'': 3000, ''decay_rate'': 0.95, ''lr_min'': 1e-05, ''greedy_grow_interval'':
+    1000, ''greedy'': 0.7, ''grow_rate'': 1.01, ''greedy_max'': 0.9, ''delta'': 1e-06,
+    ''use_wandb'': True}'
+control:
+  desc: null
+  value: '{''summary_record'': True, ''reward_predict_mode'': ''net'', ''print_info_every_n_step'':
+    300, ''update_every_n_ep'': 4, ''update_repeat_n_time'': 1, ''clear_buffer_every_n_ep'':
+    1000, ''plot_every_n_step'': 3000000000, ''render_threshold'': 99999999999}'
+evaluate:
+  desc: null
+  value: '{''render'': False, ''eval_every_n_ep'': 50, ''eval_episode'': 5}'
+save:
+  desc: null
+  value: '{''total_model_num'': 20, ''save_data_every_n_step'': 2000000000}'
+env:
+  desc: null
+  value: '{''domain'': ''MPE'', ''scenario'': ''simple_reference'', ''adversary'':
+    True, ''agent_num'': 7, ''action_dim'': 15, ''all_action_dim'': [15, 15, 15, 15,
+    15, 15, 15], ''state_dim'': 71, ''all_state_dim'': [71, 71, 71, 71, 71, 71, 71],
+    ''action_type'': ''multi_discrete'', ''n_action'': 2, ''action_ncat'': [5, 10]}'
+graph:
+  desc: null
+  value: '{''atten_head_num'': 8, ''in_norm'': False, ''in_drop'': False, ''coef_drop'':
+    False, ''residual'': True, ''Con1d_kernel_num'': 8}'
+critic:
+  desc: null
+  value: '{''input_dim'': 71, ''output_dim'': 1, ''layer_num'': 2, ''lr'': 0.001}'
+actor:
+  desc: null
+  value: '{''input_dim'': 71, ''output_dim'': 15, ''layer_num'': 2, ''lr'': 0.001}'
+reward:
+  desc: null
+  value: '{''input_dim'': 71, ''output_dim'': 3, ''layer_num'': 2, ''lr'': 0.001,
+    ''sdrr'': 0.001, ''dist_reward_fit'': True, ''global_reward_prediction'': False,
+    ''reward_aggregation_type'': ''l_smo'', ''team_reward'': False, ''reward_uncertainty_type'':
+    ''r_ac-dist'', ''eval_with_reward_uncertainty'': False}'
+config_record:
+  desc: null
+  value:
+    algorithm: madre
+    config:
+      train:
+        max_episodes: 100000
+        before_train_episode: 200
+        per_episode_length: 25
+        reward_scale: 1.0
+        single_step_mode: false
+        gamma: 0.95
+        TD: 1
+        batch_norm: false
+        tau: 0.01
+        hard_action_interval: 0.3
+        epsilon: 0.2
+        joint_store: true
+        buffer_select_with_batch_size: true
+        batch_size: 4096
+        mini_batch_size: 1024
+        buffer_clear_rate: 0.4
+        buffer_select_rate: 0.5
+        lr_decay_interval: 3000
+        decay_rate: 0.95
+        lr_min: 1.0e-05
+        greedy_grow_interval: 1000
+        greedy: 0.7
+        grow_rate: 1.01
+        greedy_max: 0.9
+        delta: 1.0e-06
+        use_wandb: true
+      control:
+        summary_record: true
+        reward_predict_mode: net
+        print_info_every_n_step: 300
+        update_every_n_ep: 4
+        update_repeat_n_time: 1
+        clear_buffer_every_n_ep: 1000
+        plot_every_n_step: 3000000000
+        render_threshold: 99999999999
+      evaluate:
+        render: false
+        eval_every_n_ep: 50
+        eval_episode: 5
+      save:
+        total_model_num: 20
+        save_data_every_n_step: 2000000000
+      env:
+        domain: MPE
+        scenario: simple_reference
+        adversary: true
+        agent_num: 7
+        action_dim: 15
+        all_action_dim:
+        - 15
+        - 15
+        - 15
+        - 15
+        - 15
+        - 15
+        - 15
+        state_dim: 71
+        all_state_dim:
+        - 71
+        - 71
+        - 71
+        - 71
+        - 71
+        - 71
+        - 71
+        action_type: multi_discrete
+        n_action: 2
+        action_ncat:
+        - 5
+        - 10
+      graph:
+        atten_head_num: 8
+        in_norm: false
+        in_drop: false
+        coef_drop: false
+        residual: true
+        Con1d_kernel_num: 8
+      critic:
+        input_dim: 71
+        output_dim: 1
+        layer_num: 2
+        lr: 0.001
+      actor:
+        input_dim: 71
+        output_dim: 15
+        layer_num: 2
+        lr: 0.001
+      reward:
+        input_dim: 71
+        output_dim: 3
+        layer_num: 2
+        lr: 0.001
+        sdrr: 0.001
+        dist_reward_fit: true
+        global_reward_prediction: false
+        reward_aggregation_type: l_smo
+        team_reward: false
+        reward_uncertainty_type: r_ac-dist
+        eval_with_reward_uncertainty: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.3
+    cli_version: 0.16.1
+    framework: keras
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1702395065.655461
+    t:
+      1:
+      - 2
+      - 3
+      - 55
+      - 100
+      2:
+      - 2
+      - 3
+      - 55
+      - 100
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.11.3
+      5: 0.16.1
+      8:
+      - 3
+      - 5
+      13: windows-amd64

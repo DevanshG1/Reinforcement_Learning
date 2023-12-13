@@ -1,0 +1,47 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-12-12T18:11:55.974482",
+    "startedAt": "2023-12-12T18:11:55.076024",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\DEVANSH\\OneDrive\\Desktop\\RL\\DRE-MARL\\train_TREA.py",
+    "codePathLocal": "train_TREA.py",
+    "codePath": "train_TREA.py",
+    "host": "LAPTOP-APFIT62Q",
+    "username": "DEVANSH",
+    "executable": "C:\\Users\\DEVANSH\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 4001.0,
+        "min": 0.0,
+        "max": 4001.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4001.0,
+            "min": 0.0,
+            "max": 4001.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 926.5139808654785,
+            "used": 492.54533767700195
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 31.214054107666016
+    }
+}
